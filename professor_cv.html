@@ -1,0 +1,899 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Resume - Dr. Nagendra Pratap Singh</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            text-indent: 0;
+        }
+
+        h1 {
+            color: black;
+            font-family: "Palatino Linotype", serif;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 17pt;
+        }
+
+        .s1 {
+            color: #7F007F;
+            font-family: "Palatino Linotype", serif;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 12pt;
+        }
+
+        .p,
+        p {
+            color: black;
+            font-family: Cambria, serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 12pt;
+            margin: 0pt;
+        }
+
+        .a,
+        a {
+            color: black;
+            font-family: "Palatino Linotype", serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 12pt;
+        }
+
+        .s2 {
+            color: black;
+            font-family: "Palatino Linotype", serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 12pt;
+        }
+
+        .s3 {
+            color: black;
+            font-family: "Courier New", monospace;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 12pt;
+        }
+
+        .h2,
+        h2 {
+            color: black;
+            font-family: "Palatino Linotype", serif;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: underline;
+            font-size: 14pt;
+        }
+
+        .s4 {
+            color: black;
+            font-family: "Palatino Linotype", serif;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 14pt;
+        }
+
+        .h3,
+        h3 {
+            color: black;
+            font-family: "Palatino Linotype", serif;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 12pt;
+        }
+
+        .s5 {
+            color: black;
+            font-family: "Times New Roman", serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: underline;
+            font-size: 14pt;
+        }
+
+        .s6 {
+            color: black;
+            font-family: "Times New Roman", serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 12pt;
+        }
+
+        .s7 {
+            color: black;
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 8pt;
+            vertical-align: 4pt;
+        }
+
+        .s8 {
+            color: black;
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 12pt;
+        }
+
+        .s9 {
+            color: #F00;
+            font-family: "Palatino Linotype", serif;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 12pt;
+        }
+
+        .s10 {
+            color: black;
+            font-family: Cambria, serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 10pt;
+        }
+
+        li {
+            display: block;
+        }
+
+        #l1 {
+            padding-left: 0pt;
+        }
+
+        #l1>li>*:first-child:before {
+            content: "• ";
+            color: black;
+            font-family: Cambria, serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 12pt;
+        }
+    </style>
+</head>
+<script>
+    // Fetch data from API
+// Fetch data from API
+fetch('http://localhost:3000/api')
+  .then(response => response.json())
+  .then(data => {
+    // Find the parent element where you want to insert the list items
+    const ulElement = document.querySelector('ul.publications');
+
+    // Remove all existing list items
+    while (ulElement.firstChild) {
+      ulElement.firstChild.remove();
+    }
+
+    // Create new list item and paragraph
+    const liElement = document.createElement('li');
+    const pElement = document.createElement('p');
+    const spanElement = document.createElement('span');
+
+    // Set the attributes of the list item
+    liElement.setAttribute('data-list-text', '•');
+
+    // Set the styles of the paragraph
+    pElement.style.paddingTop = '8pt';
+    pElement.style.paddingLeft = '20pt';
+    pElement.style.textIndent = '-14pt';
+    pElement.style.lineHeight = '110%';
+    pElement.style.textAlign = 'justify';
+
+    // Set the text of the paragraph and span
+    pElement.textContent = "Author: "; 
+    spanElement.textContent = data.author.name; 
+    spanElement.className = 'h3';
+    pElement.appendChild(spanElement);
+    pElement.innerHTML += ", Affiliations: " + data.author.affiliations; 
+
+    // Add the paragraph to the list item
+    liElement.appendChild(pElement);
+
+    // Add the list item to the list
+    ulElement.appendChild(liElement);
+  })
+  .catch(error => console.error('Error:', error));
+
+</script>
+<body>
+    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+    <p style="text-indent: 0pt;text-align: left;"><span>
+            <table border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td><img width="152" height="197"
+                            src="data:image/jpg;base64,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" />
+                    </td>
+                </tr>
+            </table>
+        </span></p>
+    <h1 style="padding-top: 3pt;padding-left: 6pt;text-indent: 0pt;line-height: 22pt;text-align: left;">Dr. NAGENDRA
+        PRATAP SINGH</h1>
+    <p class="s1" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">”Research is to see what everyone else
+        has seen and to think what no one else has thought”</p>
+    <p style="padding-left: 6pt;text-indent: 0pt;text-align: left;">Dr. B R Ambedkar National Institute of
+        Technology,Jalandhar</p>
+    <p class="s2" style="padding-left: 6pt;text-indent: 0pt;text-align: left;"><a href="mailto:singhnp@nitj.ac.in"
+            class="a" target="_blank">Mail </a>ID <span class="s3">· </span>Mobile <a
+            href="https://www.linkedin.com/in/dr-nagendra-pratap-singh-ba16062ab/"
+            style=" color: black; font-family:&quot;Courier New&quot;, monospace; font-style: normal; font-weight: bold; text-decoration: none; font-size: 12pt;"
+            target="_blank">· </a>LinkedIn <a href="https://vidwan.inflibnet.ac.in/profile/101398"
+            style=" color: black; font-family:&quot;Courier New&quot;, monospace; font-style: normal; font-weight: bold; text-decoration: none; font-size: 12pt;"
+            target="_blank">· </a>Vidwan <span class="s3">·</span></p>
+    <p class="s2" style="padding-top: 3pt;padding-left: 6pt;text-indent: 0pt;text-align: left;"><a
+            href="https://www.scopus.com/authid/detail.uri?authorId=56784812400" class="a" target="_blank">Scopus </a>ID
+        <a href="https://orcid.org/0000-0002-8928-2213"
+            style=" color: black; font-family:&quot;Courier New&quot;, monospace; font-style: normal; font-weight: bold; text-decoration: none; font-size: 12pt;"
+            target="_blank">· </a><a href="https://orcid.org/0000-0002-8928-2213" class="a" target="_blank">ORCID </a>ID
+        <a href="https://scholar.google.com/citations?user=Yd-UKrsAAAAJ&amp;hl=en&amp;oi=ao)"
+            style=" color: black; font-family:&quot;Courier New&quot;, monospace; font-style: normal; font-weight: bold; text-decoration: none; font-size: 12pt;"
+            target="_blank">· </a><a href="https://scholar.google.com/citations?user=Yd-UKrsAAAAJ&amp;hl=en&amp;oi=ao)"
+            class="a" target="_blank">Google </a><a
+            href="https://scholar.google.com/citations?user=Yd-UKrsAAAAJ&amp;hl=en&amp;oi=ao)"
+            target="_blank">Scholar</a>
+    </p>
+    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+    <h2 style="padding-top: 3pt;padding-left: 6pt;text-indent: 0pt;text-align: left;">SUMMARY
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <p style="padding-top: 12pt;padding-left: 6pt;text-indent: 21pt;line-height: 113%;text-align: justify;">Currently I
+        am working as an Assistant Professor at Dr. B. R. Ambedkar National Institute of Technology, Jalandhar (Punjab),
+        India. I received Master Degree in Computer Science and Engineering from Motilal Nehru National Institute of
+        Technology, Prayagraj (Allahabad), India and Doctoral Degree in Computer Science and Engineering from Indian
+        Institute of Technology (Banaras Hindu University), Varanasi, India. I had published 4-Book Chapters and more
+        than 45 Research Articles in SCI and Scopus Indexed High Impact Journals and Conferences. I am presently
+        reviewer of many renowned National/International Journals and Conferences.</p>
+    <p style="padding-top: 3pt;padding-left: 6pt;text-indent: 21pt;line-height: 138%;text-align: justify;">I had
+        successfully supervised 02 Ph.D. (Awarded), more than 17 PG and 10 UG students. Currently supervising 03 Ph.D.,
+        more than 04 PG and 08 UG research scholars at NIT Jalandhar. My Research Interest is Image processing (Medical
+        Image Processing), Computer Vision, Machine Learning/Deep Learning and Pattern Recognition.</p>
+    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+    <p class="s4" style="padding-bottom: 2pt;padding-left: 27pt;text-indent: 0pt;text-align: left;">EDUCATION
+        QUALIFICATION</p>
+    <p style="padding-left: 6pt;text-indent: 0pt;line-height: 1pt;text-align: left;" />
+    <ul id="l1">
+        <li data-list-text="•">
+            <h3 style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 106%;text-align: left;">Ph.D.
+                <span class="p">in Computer Science and Engineering, 2016, Indian Institute of Technology (Banaras Hindu
+                    University), Varanasi, India.</span>
+            </h3>
+            <p style="text-indent: 0pt;text-align: left;"><br /></p>
+        </li>
+        <li data-list-text="•">
+            <h3 style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 106%;text-align: left;">
+                M.Tech. <span class="p">Computer Science and Engineering, 2009, Motilal Nehru National Institute of
+                    Technology, Prayagraj (Allahabad), India.</span></h3>
+            <p style="text-indent: 0pt;text-align: left;"><br /></p>
+        </li>
+        <li data-list-text="•">
+            <h3 style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 106%;text-align: left;">
+                B.Tech. <span class="p">Computer Science and Engineering, 2002, Institute of Engineering and Technology,
+                    Kanpur, India.</span></h3>
+            <p style="text-indent: 0pt;text-align: left;"><br /></p>
+            <p class="s5" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="h2">TEACHING &nbsp;&nbsp; EXPERIENCE
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </span>
+            </p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 12pt;padding-left: 20pt;text-indent: -14pt;line-height: 113%;text-align: left;">Dr. B
+                R Ambedkar National Institute of Technology, Jalandhar (Punjab) (<span class="s6">6</span><span
+                    class="s7">th</span><span class="s8"> </span>January 2023- till date) As an Assistant professor-I
+                (CFTI).</p>
+            <p style="text-indent: 0pt;text-align: left;"><br /></p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">National Institute of
+                Technology, Hamirpur-177005, Himachal Pradesh.(<span class="s6">20</span><span class="s7">th</span><span
+                    class="s8"> </span>November 2018- <span class="s6">5</span><span class="s7">th</span></p>
+            <p style="padding-top: 2pt;padding-left: 20pt;text-indent: 0pt;text-align: left;">January 2023) As an
+                Assistant professor-II (CFTI).</p>
+            <p style="text-indent: 0pt;text-align: left;"><br /></p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 10pt;padding-left: 20pt;text-indent: -14pt;line-height: 113%;text-align: left;">Madan
+                Mohan Malaviya University of Technology, Gorakhpur-273010, Uttar Pradesh.(2016-2018) As a Permanent
+                Assistant professor.(State University)</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 3pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">Naraina College of
+                Engineering and Technology, Kanpur-208020, Uttar Pradesh.(2011-2013)</p>
+            <p style="text-indent: 0pt;text-align: left;"><br /></p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 10pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">Ambalika Institute of
+                Management and Technology, Lucknow-226020, Uttar Pradesh.(2008-2011)</p>
+            <p style="text-indent: 0pt;text-align: left;"><br /></p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 10pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">Rama Institute of
+                Engineering and Technology, Kanpur-209217, Uttar Pradesh (2007-2008)</p>
+            <p style="text-indent: 0pt;text-align: left;"><br /></p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 10pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">Azad Institute of
+                Engineering and Technology, Lucknow-226008, Uttar Pradesh (2005-2007)</p>
+            <p style="text-indent: 0pt;text-align: left;"><br /></p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 10pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">Jawahar Lal Nehru
+                Polytechnic, Mahmudabad Sitapur-261203, Uttar Pradesh (2003-2005)</p>
+            <p style="text-indent: 0pt;text-align: left;"><br /></p>
+            <p class="s4" style="padding-left: 27pt;text-indent: 0pt;text-align: left;">RESEARCH INTEREST</p>
+            <p style="padding-left: 6pt;text-indent: 0pt;line-height: 1pt;text-align: left;" />
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 9pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">Digital Image Processing
+            </p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 10pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">Medical Image
+                Processing</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 10pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">Computer Vision</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 10pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">Machine Leraning</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 10pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">Deep learning</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 10pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">Natural Languge
+                Processing</p>
+            <p style="text-indent: 0pt;text-align: left;"><br /></p>
+            <p class="s4" style="padding-left: 27pt;text-indent: 0pt;text-align: left;">PUBLISHED DATA SETS</p>
+            <p style="padding-left: 6pt;text-indent: 0pt;line-height: 1pt;text-align: left;" />
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 9pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">STRAMPN-HISTOPATHOLOGY
+                IMAGES FOR OVARIAN CANCER PREDICTION</p>
+            <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;"><a
+                    href="https://ieee-dataport.org/documents/strampn-histopathological-images-ovarian-cancer-prediction"
+                    style=" color: black; font-family:Cambria, serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12pt;"
+                    target="_blank">(DOI: 10.21227/w7w8-p960) </a><a
+                    href="https://ieee-dataport.org/documents/strampn-histopathological-images-ovarian-cancer-prediction"
+                    class="a" target="_blank">Link:Ovarian Data </a><a
+                    href="https://ieee-dataport.org/documents/strampn-histopathological-images-ovarian-cancer-prediction"
+                    target="_blank">Set</a></p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 14pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">N-BGP (NONINVASIVE
+                BLOOD GROUP PREDICTION DATA SET)</p>
+            <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;"><a
+                    href="https://ieee-dataport.org/documents/n-bgp-noninvasive-blood-group-prediction-dataset"
+                    style=" color: black; font-family:Cambria, serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12pt;"
+                    target="_blank">(DOI: 10.21227/81ps-bx03) </a><a
+                    href="https://ieee-dataport.org/documents/n-bgp-noninvasive-blood-group-prediction-dataset"
+                    class="a" target="_blank">Link:N-BGP Data </a><a
+                    href="https://ieee-dataport.org/documents/n-bgp-noninvasive-blood-group-prediction-dataset"
+                    target="_blank">Set</a></p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 14pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">OFFLINE HANDWRITTEN
+                TEXT IMAGES FOR GENDER PREDICTION</p>
+            <p style="padding-left: 20pt;text-indent: 0pt;text-align: left;"><a
+                    href="https://ieee-dataport.org/documents/offline-handwritten-text-images-gender-prediction"
+                    style=" color: black; font-family:Cambria, serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12pt;"
+                    target="_blank">(DOI: 10.21227/gart-a309) </a><a
+                    href="https://ieee-dataport.org/documents/offline-handwritten-text-images-gender-prediction"
+                    class="a" target="_blank">Link:Handwritten Text Data </a><a
+                    href="https://ieee-dataport.org/documents/offline-handwritten-text-images-gender-prediction"
+                    target="_blank">Set</a></p>
+            <p class="s4"
+                style="padding-top: 14pt;padding-bottom: 4pt;padding-left: 27pt;text-indent: 0pt;text-align: left;">List
+                of Submitted Project</p>
+            <p style="padding-left: 6pt;text-indent: 0pt;line-height: 1pt;text-align: left;" />
+            <p style="text-indent: 0pt;text-align: left;"><br /></p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 4pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">dgjfgdvhjkv</p>
+            <p style="text-indent: 0pt;text-align: left;"><br /></p>
+            <p class="s4" style="padding-left: 27pt;text-indent: 0pt;line-height: 19pt;text-align: left;">PUBLICATIONS
+            </p>
+            <p style="padding-left: 6pt;text-indent: 0pt;line-height: 1pt;text-align: left;" />
+            <h3 style="padding-left: 27pt;text-indent: 0pt;line-height: 14pt;text-align: left;">JOURNALS</h3>
+        </li>
+
+        <ul class="publications">
+            <li data-list-text="•">
+                <p
+                    style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 110%;text-align: justify;">
+                    Singh, S., Maurya, M. K., <span class="h3">Singh, N. P. </span>(2023). STRAMPN: Histopathological
+                    image
+                    dataset for ovarian cancer detection incorporating AI-based methods. Multimedia Tools and
+                    Applications,
+                    1-22.</p>
+            </li>
+        </ul>
+
+        <li data-list-text="•">
+            <p style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 110%;text-align: justify;">
+                Debbarma, M. K., <span class="h3">Singh, N. P.</span>, Shrivastava, A. K., Mishra, R. (2011, September).
+                Analysis of Software Complexity Measures for Regression Testing. In Proceedings of International
+                Conference on Advances in Computer Engineering (pp. 88-92).</p>
+            <p class="s5" style="padding-top: 3pt;padding-left: 6pt;text-indent: 0pt;text-align: left;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="h2">CONFERENCES
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </span>
+            </p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 6pt;padding-left: 20pt;text-indent: -14pt;line-height: 110%;text-align: justify;">
+                Singh, S., Verma, A., Guleria, V., Yadav, S., <span class="h3">Singh, N. P. </span>(2023, June). Deep
+                Learning-Based Networks to Detect Leaf Disease in Maize and Corn. In 2023 International Conference on
+                IoT, Communication and Automation Technology (ICICAT) (pp. 1-6). IEEE.</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 7pt;padding-left: 20pt;text-indent: -14pt;line-height: 110%;text-align: justify;">
+                Ankush, Singh, S., <span class="h3">Singh, N. P.</span>, Rathee, P. (2023, January). Skin Cancer
+                Detection Using Deep Learning Approach. In International Conference on Smart Computing and Communication
+                (pp. 521-531). Singapore: Springer Nature Singapore.</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 7pt;padding-left: 20pt;text-indent: -14pt;line-height: 110%;text-align: justify;">
+                Kapoor, K., Singh, S., <span class="h3">Singh, N. P.</span>, Priyanka. (2023, January). Bell-Pepper Leaf
+                Bacterial Spot Detection Using AlexNet and VGG-16. In International Conference on Smart Computing and
+                Communication (pp. 507-519). Singapore: Springer Nature Singapore.</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 7pt;padding-left: 20pt;text-indent: -14pt;line-height: 110%;text-align: justify;">
+                Verma, P. K., <span class="h3">Singh, N. P. </span>(2022). Retinal image enhancement using hybrid
+                approach. In Machine Intelligence and Smart Systems: Proceedings of MISS 2021 (pp. 515-524). Singapore:
+                Springer Nature Singapore.</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 7pt;padding-left: 20pt;text-indent: -14pt;line-height: 111%;text-align: justify;">
+                Kumar, K., Verma, P. K., <span class="h3">Singh, N. P. </span>(2021, December). A Comparatively Study of
+                Machine Learning Approaches to Predict Service of Disease Haemophilia A. In 2021 First International
+                Conference on Advances in Computing and Future Communication Technologies (ICACFCT) (pp. 58-61). IEEE.
+            </p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 7pt;padding-left: 20pt;text-indent: -14pt;line-height: 110%;text-align: justify;">
+                Bhatia, R., <span class="h3">Singh, N. P. </span>(2021, December). Gender Recognition by Voice Using
+                Machine Learning. In International Conference on Advanced Network Technologies and Intelligent Computing
+                (pp. 307-318). Cham: Springer International Publishing.</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 7pt;padding-left: 20pt;text-indent: -14pt;line-height: 110%;text-align: justify;">
+                Susheel Kumar, K., Jatoth, C. S., <span class="h3">Singh, N. P. </span>(2021). Segmentation of retinal
+                blood vessel using an algorithm-based gamma distribution of matched filter. In Proceedings of Integrated
+                Intelligence Enable Networks and Computing: IIENC 2020 (pp. 73-81). Springer Singapore.</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 7pt;padding-left: 20pt;text-indent: -14pt;line-height: 106%;text-align: justify;">
+                Dhiman, V., Kumar, U., Narla, A., Kumar, A., Sharma, V., <span class="h3">Singh, N. P. </span>(2021). An
+                election system using blockchain. In Smart Computing (pp. 48-55). CRC Press.</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 106%;text-align: justify;">
+                Dhenkawat, R., Saini, S., <span class="h3">Singh, N. P. </span>(2022). Semantic Analysis of Chest X-Ray
+                using an Attention-based CNN.</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 110%;text-align: justify;">
+                Maurya, P., <span class="h3">Singh, N. P. </span>(2020). Mushroom classification using feature-based
+                machine learning approach. In Proceedings of 3rd International Conference on Computer Vision and Image
+                Processing: CVIP 2018, Volume 1 (pp. 197-206). Springer Singapore.</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 7pt;padding-left: 20pt;text-indent: -14pt;line-height: 106%;text-align: justify;">
+                Verma, P. K., <span class="h3">Singh, N. P.</span>, Yadav, D. (2020). Image enhancement: a review.
+                Ambient Communications and Computer Systems: RACCCS 2019, 347-355.</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 110%;text-align: justify;">
+                Yadav, P., <span class="h3">Singh, N. P. </span>(2019). Classification of normal and abnormal retinal
+                images by using feature-based machine learning approach. In Recent Trends in Communication, Computing,
+                and Electronics: Select Proceedings of IC3E 2018 (pp. 387-396). Springer Singapore.</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 7pt;padding-left: 20pt;text-indent: -14pt;line-height: 110%;text-align: justify;">
+                Singh, S., <span class="h3">Singh, N. P. </span>(2019). Machine learning-based classification of good
+                and rotten apple. In Recent Trends in Communication, Computing, and Electronics: Select Proceedings of
+                IC3E 2018 (pp. 377-386). Springer Singapore.</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 7pt;padding-left: 20pt;text-indent: -14pt;line-height: 111%;text-align: justify;">
+                Mahato, D. P., Sandhu, J. K., <span class="h3">Singh, N. P.</span>, Dutta, K. (2020). Dependability
+                analysis for on-demand computing based transaction processing system. In Advanced Information Networking
+                and Applications: Proceedings of the 33rd International Conference on Advanced Information Networking
+                and Applications (AINA-2019) 33 (pp. 188-199). Springer International Publishing.</p>
+        </li>
+        <li data-list-text="•">
+            <h3 style="padding-top: 2pt;padding-left: 20pt;text-indent: -14pt;line-height: 110%;text-align: justify;">
+                Singh, N. P.<span class="p">, Nagahma, T., Yadav, P., Yadav, D. (2018, November). Feature based leaf
+                    identification. In 2018 5th IEEE Uttar Pradesh section international conference on electrical,
+                    electronics and computer engineering (UPCON) (pp. 1-7). IEEE.</span></h3>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 110%;text-align: justify;">
+                Shahi, P., Yadav, S., Singh, N., <span class="h3">Singh, N. P. </span>(2018, November). Melanoma skin
+                cancer detection using various classifiers. In 2018 5th IEEE Uttar Pradesh Section International
+                Conference on Electrical, Electronics and Computer Engineering (UPCON) (pp. 1-5). IEEE.</p>
+        </li>
+        <li data-list-text="•">
+            <h3 style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 111%;text-align: justify;">
+                Singh, N. P.<span class="p">, Srivastava, R. (2017). Weibull probability distribution function-based
+                    matched filter approach for retinal blood vessels segmentation. In Advances in Computational
+                    Intelligence: Proceedings of International Conference on Computational Intelligence 2015 (pp.
+                    427-437). Springer Singapore.</span></h3>
+        </li>
+        <li data-list-text="•">
+            <h3 style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 110%;text-align: justify;">
+                Singh, N. P.<span class="p">, Kumar, R., Srivastava, R. (2015, May). Local entropy thresholding based
+                    fast retinal vessels segmentation by modifying matched filter. In International Conference on
+                    Computing, Communication Automation (pp. 1166-1170). IEEE.</span></h3>
+        </li>
+        <li data-list-text="•">
+            <h3 style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 110%;text-align: justify;">
+                Singh, N. P.<span class="p">, Mishra, R., Debbarma, M. K., Sachan, S. (2011, April). The review:
+                    Lifecycle of object-oriented software testing. In 2011 3rd international conference on electronics
+                    computer technology (Vol. 3, pp. 52-56). IEEE.</span></h3>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 110%;text-align: justify;">
+                Kumar Saroj, S., Oshiro, S., Yadav, P., <span class="h3">Pratap Singh, N. </span>(2019). An efficient
+                approach for plant leaves identification based on texture features. International Journal of
+                Computational Intelligence IoT, 2(3).</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 110%;text-align: justify;">
+                Kumar Saroj, S., Nigam, N., <span class="h3">Pratap Singh, N. </span>(2018). Performance Evaluation of
+                Breast Cancer Classifiers using Different Tools. Performance Evaluation of Breast Cancer Classifiers
+                using Different Tools.</p>
+            <p style="text-indent: 0pt;text-align: left;"><br /></p>
+            <p class="s5" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="h2">BOOKS
+                    &nbsp; AND &nbsp; BOOK &nbsp; CHAPTER
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </span></p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 9pt;padding-left: 20pt;text-indent: -14pt;line-height: 111%;text-align: justify;">
+                Dhenkawat, R., Saini, S., Kumar, S., <span class="h3">Singh, N. P. </span>(2022). Attention-Based Deep
+                Learning Approach for Semantic Analysis of Chest X-Ray Images Modality. In Role of Data-Intensive
+                Distributed Computing Systems in Designing Data Solutions (pp. 241-263). Cham: Springer International
+                Publishing.</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 110%;text-align: justify;">
+                Yadhav, P. S. K., Kumar, K. S., <span class="h3">Singh, N. P. </span>(2022). Left Ventricle Volume
+                Analysis in Cardiac MRI Images Using Convolutional Neural Networks. In Role of Data-Intensive
+                Distributed Computing Systems in Designing Data Solutions (pp. 295-320). Cham: Springer International
+                Publishing.</p>
+            <p style="text-indent: 0pt;text-align: left;"><br /></p>
+            <p class="s4" style="padding-left: 27pt;text-indent: 0pt;line-height: 19pt;text-align: left;">PG AND UG
+                THESIS</p>
+            <p style="padding-left: 6pt;text-indent: 0pt;line-height: 1pt;text-align: left;" />
+            <h3 style="padding-left: 27pt;text-indent: 0pt;line-height: 14pt;text-align: left;">PG THESIS</h3>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 10pt;padding-left: 20pt;text-indent: -14pt;line-height: 113%;text-align: justify;">
+                ”Facial Recognition based Automatic Image Captioning”(Computer Science and Engineering, NIT Hamirpur
+                (H.P.)</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 113%;text-align: left;">Heart
+                Diseases Prediction Using Deep Learning (Computer Science and Engineering, NIT Hamirpur (H.P.)</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 9pt;padding-left: 20pt;text-indent: -14pt;line-height: 113%;text-align: left;">Brain
+                Tumor Segmentation Using Deep Learning (Computer Science and Engineering, NIT Hamirpur (H.P.)</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 113%;text-align: left;">A
+                Study of Neural Network Techniques for Covid-19 Face Mask Detection (Computer Science and Engineering,
+                NIT Hamirpur (H.P.)</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 3pt;padding-left: 20pt;text-indent: -14pt;line-height: 113%;text-align: left;">
+                Ranking of e-commerce Product Reviews using Keyword Extraction (Computer Science and Engineering, NIT
+                Hamirpur (H.P.)</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 113%;text-align: left;">
+                English-Hindi Machine Translation using Attention Mechanism (Computer Science and Engineering, NIT
+                Hamirpur (H.P.)</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 9pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">Detection of COVID by
+                using CT Scans (Computer Science and Engineering, NIT Hamirpur (H.P.)</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 10pt;padding-left: 20pt;text-indent: -14pt;line-height: 113%;text-align: left;">
+                Gender Recognition by Voice using Machine Learning (Computer Science and Engineering, NIT Hamirpur
+                (H.P.)</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 9pt;padding-left: 20pt;text-indent: -14pt;line-height: 113%;text-align: left;">Left
+                Ventricle Volume Analysis using CNN in Cardic MRI Images (Computer Science and Engineering, NIT Hamirpur
+                (H.P.)</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 113%;text-align: left;">A
+                Hybrid frame work for gender detection using Skin Patches (Computer Science and Engineering, NIT
+                Hamirpur (H.P.)</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 9pt;padding-left: 20pt;text-indent: -14pt;line-height: 113%;text-align: left;">
+                Segmenting Retinal Blood Vessels Using Birnbaum-Saunders PDF (Computer Science and Engineering, NIT
+                Hamirpur (H.P.)</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 113%;text-align: left;">A
+                Morphological Operator Based Image Contrast Enhancement Technique (Computer Science and Engineering, NIT
+                Hamirpur (H.P.)</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 113%;text-align: left;">Gender
+                Prediction from Offline Handwriting using Enhanced LBP Technique (Computer Science and Engineering, NIT
+                Hamirpur (H.P.)</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 9pt;padding-left: 20pt;text-indent: -14pt;line-height: 113%;text-align: left;">
+                Automated Early Detection of Retinal Disease by using Feature Extration and Machine Learning (Computer
+                Science and Engineering, MMMUT, Gorakhpur (U.P.)</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">City Summary (Master of
+                Computer Application (MCA)/ MMMUT, Gorakhpur (U.P.)</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 10pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">APEX TGI App (Master of
+                Computer Application (MCA)/ MMMUT, Gorakhpur (U.P.)</p>
+            <p class="s5" style="padding-top: 11pt;padding-left: 6pt;text-indent: 0pt;text-align: left;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="h2">UG &nbsp;&nbsp;&nbsp; THESIS
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </span>
+            </p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 10pt;padding-left: 20pt;text-indent: -14pt;line-height: 113%;text-align: left;">Brain
+                Tumor Classification using Deep Learning Techniques (Computer Science and Engineering, NIT Hamirpur
+                (H.P.)</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 113%;text-align: left;">Brain
+                Tumor Detection using Texture based LBP feature on MRI Image using feature Selection Technique (Computer
+                Science and Engineering, NIT Hamirpur (H.P.)</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 9pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">Air Quality Index (AQI)
+                Prediction (Computer Science and Engineering, NIT Hamirpur (H.P.)</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 10pt;padding-left: 20pt;text-indent: -14pt;line-height: 113%;text-align: left;">
+                Breast Cancer Detection using Convolutional Neural Network (Computer Science and Engineering, NIT
+                Hamirpur (H.P.)</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 113%;text-align: left;">Bazaar
+                Analysis-Stock Recommendation (Computer Science and Engineering, NIT Hamirpur (H.P.)</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">Election System using
+                Blockchain (Computer Science and Engineering, NIT Hamirpur (H.P.)</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 10pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">E-COP System
+                (Information Technology NCET, Kanpur</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 10pt;padding-left: 20pt;text-indent: -14pt;line-height: 113%;text-align: left;">Study
+                and Implement of various Filter for Image Enhancement using Matlab (Computer Science and Engineering,
+                MMM University of Technology, Gorakhpur, (U.P.)</p>
+            <p style="text-indent: 0pt;text-align: left;"><br /></p>
+            <p class="s5" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="h2">PATENT
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </span>
+            </p>
+        </li>
+        <li data-list-text="•">
+            <h3 style="padding-top: 2pt;padding-left: 20pt;text-indent: -14pt;line-height: 106%;text-align: justify;">
+                AAM-Physical Fitness: <span class="p">ANALYSIS OF PHYSICAL FITNESS AND ACTIVITY LEVEL USING MACHINE
+                    LEARNING, DEEP LEARNING PROGRAMMING</span></h3>
+            <h3 style="padding-left: 20pt;text-indent: 0pt;line-height: 106%;text-align: left;">Patent number <span
+                    class="p">2020101986 Australia Patents Act 1990</span></h3>
+            <h3 style="padding-left: 20pt;text-indent: 0pt;line-height: 106%;text-align: left;">Inventors <span
+                    class="p">Vipin Jain, Rohin Garg, Divakar Yadav, B. Venkatesh, Nagendra Pratap Singh, Prab-hakar
+                    Vattikuti, Arun Kumar Yadav, Arvind Singh, Jagdeep Singh, S. B. Chordiya</span></h3>
+            <p style="text-indent: 0pt;text-align: left;"><br /></p>
+            <p class="s5" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="h2">OUTREACH &nbsp;&nbsp; ACTIVITY
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </span>
+            </p>
+        </li>
+        <li data-list-text="•">
+            <p class="s9" style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">Poster
+                Presentation <span class="p">Indo-German Frontiers of Engineering, Potsdam, Germany</span></p>
+        </li>
+        <li data-list-text="•">
+            <p class="s9"
+                style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 106%;text-align: justify;">
+                Mentered/Supervised two students of University of Ryukyus, Japan <span class="p">Computer Science and
+                    Engineering Department, MMMUT, Gorakhpur (U.P.),</span></p>
+        </li>
+        <li data-list-text="•">
+            <p class="s9" style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">Poster
+                Presentation <span class="p">Computer Science and Engineering, IIT (BHU), Varanasi</span></p>
+        </li>
+        <li data-list-text="•">
+            <p class="s9" style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">Poster
+                Presentation <span class="p">Computer Science and Engineering, IIT (BHU), Varanasi</span></p>
+        </li>
+        <li data-list-text="•">
+            <p class="s9"
+                style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 106%;text-align: justify;">
+                Paper Presentation <span class="p">Information Extraction using Text Miner in National Seminar on
+                    Advance Computing and Communications (Invertis Institute of Engineering and Technology, Bareilly
+                    (U.P.)</span></p>
+        </li>
+        <li data-list-text="•">
+            <p class="s9"
+                style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 110%;text-align: justify;">
+                Paper Presentation <span class="p">Analysis of Unit Testing using Extended Colored Petri Net in
+                    International Conference on Technology and Information Systems organized by Department of Computer
+                    Science and IT, DAV College, Amritsar (University Grants Commission (UGC)</span></p>
+        </li>
+        <li data-list-text="•">
+            <p class="s9"
+                style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 111%;text-align: justify;">
+                Paper Presentation<span class="p">Local entropy thresholding based fast retinal vessels segmentation by
+                    modifying matched filter in International Conference on Computing, Communication and Automation
+                    (ICCCA 2015) organized by School of Computing Science and Engineering, Galgotias University (IEEE UP
+                    Section)</span></p>
+        </li>
+        <li data-list-text="•">
+            <p class="s9"
+                style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 110%;text-align: justify;">
+                Session Chair <span class="p">International Conference on Emerging Trends in Communication, Computing
+                    and Electronics (IC3E-2018) University of Allahabad and JK Institute of Applied Physics and
+                    Technology, Allahabad</span></p>
+        </li>
+        <li data-list-text="•">
+            <p class="s9"
+                style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 110%;text-align: left;">
+                Session Chair <span class="p">5th IEEE Uttar Pradesh Section International Conference on Electrical,
+                    Electronics and Computer Engineering (UPCON-2018)Computer Science and Engineering, MMMUT,Gorakhpur
+                    (U.P.) IEEE UP Section, and Council of Science and Technology UP, EDS, AICTE and CETPA etc.</span>
+            </p>
+        </li>
+        <li data-list-text="•">
+            <p class="s9"
+                style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 110%;text-align: justify;">
+                Session Chair<span class="p">3rd International Conference on Advanced Computing and Software Engineering
+                    (ICACSE-2021) Computer Science and Engineering, Kamla Nehru Institute of Technology, Sultanpur,
+                    (U.P.), India (TEQIP-III)</span></p>
+        </li>
+        <li data-list-text="•">
+            <p class="s9"
+                style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 110%;text-align: justify;">
+                Session Chair <span class="p">5th IAPR International Conference on Computer Vision and Image Procession
+                    (CVIP-2020) Indian Institute of Information Technology (IIIT), Allahabad (U.P.), India. IEEE Signal
+                    Processing Society UP Section Chapter, DRDO, ISRO and Mathworks.</span></p>
+        </li>
+        <li data-list-text="•">
+            <p class="s9"
+                style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 110%;text-align: justify;">
+                Session Chair <span class="p">Springer International Conference on Machine Intelligence and Smart
+                    Systems (MISS-2021) ”IPS College of Technology and Management, Shivpuri Link Road, Gwalior, Madhya
+                    Pradesh,India ” Planting Future, Springer and Artificial Computational Research Society.</span></p>
+            <p class="s5" style="padding-top: 12pt;padding-left: 6pt;text-indent: 0pt;text-align: left;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="h2">EXPERT &nbsp;
+                    TALK &nbsp; AND &nbsp; WORKSHOP
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </span></p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 9pt;padding-left: 20pt;text-indent: -14pt;line-height: 113%;text-align: justify;">
+                Medical Image Processing and it’s Applications Using Matlab in Short-term training program organized by
+                Department of ECE, Mahatma Gandhi Institute of Technology, Hyderabad, Telangana. Department of ECE,
+                Mahatma Gandhi Institute of Technology, Hyderabad, Telangana.</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 3pt;padding-left: 20pt;text-indent: -14pt;line-height: 113%;text-align: justify;">
+                Image Processing and Applications Webinar organized by the Department of CSE, BBD University, Lucknow
+                (U.P.) Department of CSE, BBD University, Lucknow (U.P.)</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 113%;text-align: justify;">
+                Hands-on: Medical Image Processing using MATLAB Short-term training program organized by Department of
+                ECE, Mahatma Gandhi Institute of Technology, Hyderabad, Telangana Department of ECE, Mahatma Gandhi
+                Institute of Technology, Hyderabad, Telangana.</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 9pt;padding-left: 20pt;text-indent: -14pt;line-height: 113%;text-align: justify;">
+                Digital Image Processing Faculty Development Program organized by Department of Information Technology
+                Rajkiya Engineering College, Azamgarh, (U.P.) Department of Information Technology Rajkiya Engineering
+                College, Azamgarh, (U.P.)</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 113%;text-align: justify;">
+                Texture Feature based Retinal Disease Prediction Faculty Development Program on “Research Trends in AI
+                and Mobile System (RTAIMS-2019)” organized by Department of CSE, NIT Hamirpur (H.P.)Department of CSE,
+                NIT Hamirpur (H.P.)</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 9pt;padding-left: 20pt;text-indent: -14pt;line-height: 113%;text-align: justify;">
+                LaTex Module-1,2 3 (Three Talks) Three days workshop on ”LaTex for Research rganized by Centre of
+                Development for Technical Education, MMM University of Technology, Gorakhpur (U.P.) Centre of
+                Development for Technical Education, MMM University of Technology, Gorakhpur (U.P.)</p>
+        </li>
+        <li data-list-text="•">
+            <p style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 113%;text-align: justify;">
+                Practical Aspects of Machine Learning One-week Short Term Course onrganized by Department of Computer
+                Science and Engineering, Kamla Nehru Institute Technology, Sultanpur, UP. Department of Computer Science
+                and Engineering, Kamla Nehru Institute Technology, Sultanpur, UP.</p>
+            <p style="text-indent: 0pt;text-align: left;"><br /></p>
+            <p class="s5" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="h2">PERSONAL &nbsp;&nbsp; DETAILS
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </span>
+            </p>
+        </li>
+        <li data-list-text="•">
+            <h3 style="padding-top: 9pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">Father’s Name <span
+                    class="p">: Krishna Pal Singh</span></h3>
+        </li>
+        <li data-list-text="•">
+            <h3 style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">Sex <span class="p">:
+                    Male</span></h3>
+        </li>
+        <li data-list-text="•">
+            <h3 style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">Status <span
+                    class="p">: Married</span></h3>
+        </li>
+        <li data-list-text="•">
+            <h3 style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">Nationality <span
+                    class="p">: Indian</span></h3>
+            <p style="text-indent: 0pt;text-align: left;"><br /></p>
+            <p class="s5" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="h2">Declaration
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </span>
+            </p>
+        </li>
+        <li data-list-text="•">
+            <p class="s10"
+                style="padding-top: 9pt;padding-left: 20pt;text-indent: -14pt;line-height: 111%;text-align: justify;">I
+                hereby declare that the above mentioned information is correct up to my knowledge and I bear the
+                responsibility for the correctness of the above mentioned.</p>
+        </li>
+    </ul>
+</body>
+
+</html>
