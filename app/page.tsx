@@ -9,6 +9,7 @@ import Email from './components/Email'
 import Services from './components/Services'
 import ProjectDisplay from './components/ProjectDisplay'
 import Experience from './components/Experience'
+import ResearchPapers from './components/ResearchPapers'
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <Working />
       <About />
       <Experience />
+      <ResearchPapers />
       {/* <ProjectDisplay /> */}
       <Testimonials />
       <Email />
