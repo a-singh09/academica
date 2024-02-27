@@ -178,6 +178,9 @@
 fetch('http://localhost:3000/api')
   .then(response => response.json())
   .then(data => {
+
+    console.log(data);
+
     // Find the parent element where you want to insert the list items
     const ulElement = document.querySelector('ul.publications');
 
@@ -186,33 +189,38 @@ fetch('http://localhost:3000/api')
       ulElement.firstChild.remove();
     }
 
-    // Create new list item and paragraph
-    const liElement = document.createElement('li');
-    const pElement = document.createElement('p');
-    const spanElement = document.createElement('span');
+    // Loop over the articles array
+    data.articles.forEach(article => {
+      // Create new list item and paragraph
+      const liElement = document.createElement('li');
+      const pElement = document.createElement('p');
+      const spanElement = document.createElement('span');
 
-    // Set the attributes of the list item
-    liElement.setAttribute('data-list-text', '•');
+      // Set the attributes of the list item
+      liElement.setAttribute('data-list-text', '•');
 
-    // Set the styles of the paragraph
-    pElement.style.paddingTop = '8pt';
-    pElement.style.paddingLeft = '20pt';
-    pElement.style.textIndent = '-14pt';
-    pElement.style.lineHeight = '110%';
-    pElement.style.textAlign = 'justify';
+      // Set the styles of the paragraph
+      pElement.style.paddingTop = '8pt';
+      pElement.style.paddingLeft = '20pt';
+      pElement.style.textIndent = '-14pt';
+      pElement.style.lineHeight = '110%';
+      pElement.style.textAlign = 'justify';
 
-    // Set the text of the paragraph and span
-    pElement.textContent = "Author: "; 
-    spanElement.textContent = data.author.name; 
-    spanElement.className = 'h3';
-    pElement.appendChild(spanElement);
-    pElement.innerHTML += ", Affiliations: " + data.author.affiliations; 
+      // Set the text of the paragraph and span
+      pElement.textContent = "Title: "; 
+      spanElement.textContent = article.title; 
+      spanElement.className = 'h3';
+      pElement.appendChild(spanElement);
+      pElement.innerHTML += ", Authors: " + article.authors; 
 
-    // Add the paragraph to the list item
-    liElement.appendChild(pElement);
+      pElement.innerHTML += ", Year: " + article.year;
 
-    // Add the list item to the list
-    ulElement.appendChild(liElement);
+      // Add the paragraph to the list item
+      liElement.appendChild(pElement);
+
+      // Add the list item to the list
+      ulElement.appendChild(liElement);
+    });
   })
   .catch(error => console.error('Error:', error));
 
@@ -432,10 +440,7 @@ fetch('http://localhost:3000/api')
         </ul>
 
         <li data-list-text="•">
-            <p style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 110%;text-align: justify;">
-                Debbarma, M. K., <span class="h3">Singh, N. P.</span>, Shrivastava, A. K., Mishra, R. (2011, September).
-                Analysis of Software Complexity Measures for Regression Testing. In Proceedings of International
-                Conference on Advances in Computer Engineering (pp. 88-92).</p>
+           
             <p class="s5" style="padding-top: 3pt;padding-left: 6pt;text-indent: 0pt;text-align: left;">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <span class="h2">CONFERENCES
