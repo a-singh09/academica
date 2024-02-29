@@ -14,7 +14,7 @@ export async function GET(req: Request) {
     api_key: apiKey,
     hl: "en",
     sort: "pubdate",
-    num: "5",
+    num: "10",
   };
 
   try {
