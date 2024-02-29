@@ -174,57 +174,61 @@
 </head>
 <script>
     // Fetch data from API
-// Fetch data from API
-fetch('http://localhost:3000/api')
-  .then(response => response.json())
-  .then(data => {
+    // Fetch data from API
+    fetch('http://localhost:3000/api')
+        .then(response => response.json())
+        .then(data => {
 
-    console.log(data);
+            console.log(data);
 
-    // Find the parent element where you want to insert the list items
-    const ulElement = document.querySelector('ul.publications');
+            // Find the parent element where you want to insert the list items
+            const ulElement = document.querySelector('ul.publications');
 
-    // Remove all existing list items
-    while (ulElement.firstChild) {
-      ulElement.firstChild.remove();
-    }
+            // Remove all existing list items
+            while (ulElement.firstChild) {
+                ulElement.firstChild.remove();
+            }
 
-    // Loop over the articles array
-    data.articles.forEach(article => {
-      // Create new list item and paragraph
-      const liElement = document.createElement('li');
-      const pElement = document.createElement('p');
-      const spanElement = document.createElement('span');
+            // Loop over the articles array
+            data.articles.forEach(article => {
+                // Create new list item and paragraph
+                const liElement = document.createElement('li');
+                const pElement = document.createElement('p');
+                const spanElement = document.createElement('span');
 
-      // Set the attributes of the list item
-      liElement.setAttribute('data-list-text', '•');
+                // Set the attributes of the list item
+                liElement.setAttribute('data-list-text', '•');
 
-      // Set the styles of the paragraph
-      pElement.style.paddingTop = '8pt';
-      pElement.style.paddingLeft = '20pt';
-      pElement.style.textIndent = '-14pt';
-      pElement.style.lineHeight = '110%';
-      pElement.style.textAlign = 'justify';
+                // Set the styles of the list item
+                liElement.style.listStyleType = 'disc';
 
-      // Set the text of the paragraph and span
-      pElement.textContent = "Title: "; 
-      spanElement.textContent = article.title; 
-      spanElement.className = 'h3';
-      pElement.appendChild(spanElement);
-      pElement.innerHTML += ", Authors: " + article.authors; 
+                // Set the styles of the paragraph
+                pElement.style.paddingTop = '8pt';
+                pElement.style.paddingLeft = '20pt';
+                pElement.style.textIndent = '-14pt';
+                pElement.style.lineHeight = '110%';
+                pElement.style.textAlign = 'justify';
 
-      pElement.innerHTML += ", Year: " + article.year;
+                // Set the text of the paragraph and span
+                pElement.textContent = "• Title: ";
+                spanElement.textContent = article.title;
+                spanElement.className = 'h3';
+                pElement.appendChild(spanElement);
+                pElement.innerHTML += ", Authors: " + article.authors;
 
-      // Add the paragraph to the list item
-      liElement.appendChild(pElement);
+                pElement.innerHTML += ", Year: " + article.year;
 
-      // Add the list item to the list
-      ulElement.appendChild(liElement);
-    });
-  })
-  .catch(error => console.error('Error:', error));
+                // Add the paragraph to the list item
+                liElement.appendChild(pElement);
+
+                // Add the list item to the list
+                ulElement.appendChild(liElement);
+            });
+        })
+        .catch(error => console.error('Error:', error));
 
 </script>
+
 <body>
     <p style="text-indent: 0pt;text-align: left;"><br /></p>
     <p style="text-indent: 0pt;text-align: left;"><span>
@@ -413,41 +417,36 @@ fetch('http://localhost:3000/api')
                     href="https://ieee-dataport.org/documents/offline-handwritten-text-images-gender-prediction"
                     target="_blank">Set</a></p>
             <p class="s4"
-                style="padding-top: 14pt;padding-bottom: 4pt;padding-left: 27pt;text-indent: 0pt;text-align: left;">List
-                of Submitted Project</p>
+                style="padding-top: 14pt;padding-bottom: 4pt;padding-left: 27pt;text-indent: 0pt;text-align: left;"></p>
             <p style="padding-left: 6pt;text-indent: 0pt;line-height: 1pt;text-align: left;" />
             <p style="text-indent: 0pt;text-align: left;"><br /></p>
         </li>
-        <li data-list-text="•">
-            <p style="padding-top: 4pt;padding-left: 20pt;text-indent: -14pt;text-align: left;">dgjfgdvhjkv</p>
-            <p style="text-indent: 0pt;text-align: left;"><br /></p>
-            <p class="s4" style="padding-left: 27pt;text-indent: 0pt;line-height: 19pt;text-align: left;">PUBLICATIONS
-            </p>
-            <p style="padding-left: 6pt;text-indent: 0pt;line-height: 1pt;text-align: left;" />
-            <h3 style="padding-left: 27pt;text-indent: 0pt;line-height: 14pt;text-align: left;">JOURNALS</h3>
-        </li>
+
+
+        <p class="s4" style="padding-left: 27pt;text-indent: 0pt;line-height: 19pt;text-align: left;">PUBLICATIONS
+        </p>
+        <p style="padding-left: 6pt;text-indent: 0pt;line-height: 1pt;text-align: left;" />
+        <h3 style="padding-left: 27pt;text-indent: 0pt;line-height: 14pt;text-align: left;">JOURNALS</h3>
+
 
         <ul class="publications">
             <li data-list-text="•">
                 <p
                     style="padding-top: 8pt;padding-left: 20pt;text-indent: -14pt;line-height: 110%;text-align: justify;">
-                    Singh, S., Maurya, M. K., <span class="h3">Singh, N. P. </span>(2023). STRAMPN: Histopathological
-                    image
-                    dataset for ovarian cancer detection incorporating AI-based methods. Multimedia Tools and
-                    Applications,
-                    1-22.</p>
+                    <span class="h3"></span>
+                </p>
             </li>
         </ul>
 
-        <li data-list-text="•">
-           
-            <p class="s5" style="padding-top: 3pt;padding-left: 6pt;text-indent: 0pt;text-align: left;">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <span class="h2">CONFERENCES
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </span>
-            </p>
-        </li>
+
+
+        <p class="s5" style="padding-top: 3pt;padding-left: 6pt;text-indent: 0pt;text-align: left;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="h2">CONFERENCES
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+        </p>
+
         <li data-list-text="•">
             <p style="padding-top: 6pt;padding-left: 20pt;text-indent: -14pt;line-height: 110%;text-align: justify;">
                 Singh, S., Verma, A., Guleria, V., Yadav, S., <span class="h3">Singh, N. P. </span>(2023, June). Deep
