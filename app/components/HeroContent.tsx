@@ -51,7 +51,7 @@ export default function HeroContent() {
           </div>
           <div className="lg:w-1/2 lg:ml-16 lg:flex lg:justify-center lg:items-center">
             <div className="lg:w-max mx-5 relative lg:absolute lg:top-48">
-              {/* <img src="/hero.png" alt="Professor Image" className="relative mx-auto w-64 h-64 lg:w-96 lg:h-96" /> */}
+              <img src="/hero.jpeg" alt="Professor Image" className="relative mx-auto " />
             </div>
           </div>
 

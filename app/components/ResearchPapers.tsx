@@ -47,10 +47,10 @@ export default function ResearchPapers() {
             </div>
             {/* END Heading */}
 
-            <div className=" pt-14 px-40">
+            <div className=" pt-14 px-5 lg:px-40">
 
                 {/* Responsive Table Container */}
-                <div className="min-w-full overflow-x-auto  borderborder-gray-200 drop-shadow-2xl-xl rounded-lg bg-white bg-opacity-25">
+                <div className="overflow-auto min-w-full border border-gray-200 drop-shadow-2xl-xl rounded-lg bg-white bg-opacity-25">
                     {/* Table */}
                     <table className="min-w-full whitespace-nowrap align-middle text-sm">
                         {/* Table Header */}
@@ -91,7 +91,6 @@ export default function ResearchPapers() {
                                     </td>
                                 </tr>
                             ))}
-
                         </tbody>
                         {/* END Table Body */}
                     </table>
